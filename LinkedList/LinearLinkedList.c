@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+//Creating new node
 struct node
 {
     int value;
     struct node *next;
 };
+
+//Creating a head node
 struct node *head;
+
+//function for Insert in 1st of Linked List
 void insertFirst(int val)
 {
     struct node *temp;
@@ -14,6 +20,8 @@ void insertFirst(int val)
     temp->next = head;
     head = temp;
 }
+
+//Function for Insert in last of Linked List
 void insertLast(int val)
 {
     // struct node *temp;
@@ -28,6 +36,8 @@ void insertLast(int val)
     temp2->next = temp;
     return;
 }
+
+// Inserting in middle of the linked list
 void insertMiddle(int val, int place)
 {
     struct node *temp,*temp2 = head;
@@ -45,6 +55,8 @@ void insertMiddle(int val, int place)
     temp->next = temp2->next;
     temp2->next = temp;
 }
+
+// Searching in node
 void search(int val)
 {
     if (head == NULL)
@@ -65,6 +77,8 @@ void search(int val)
     }
     printf("Got at index %d\n", i);
 }
+
+// Deleting of particular node
 void deleteElement(int val)
 {
     struct node *temp = head;
@@ -81,6 +95,8 @@ void deleteElement(int val)
     printf("Deleted element is %d\n", temp->next->value);
     temp->next = temp->next->next;
 }
+
+// printing node
 void printAll()
 {
     struct node *temp;
@@ -94,6 +110,7 @@ void printAll()
 }
 int main()
 {
+    // Calling all functions
     insertFirst(1);
     insertFirst(2);
     insertLast(8);
