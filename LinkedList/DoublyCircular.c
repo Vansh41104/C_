@@ -1,12 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
+
+//Definig new node
 struct node
 {
     int data;
     struct node* next;
     struct node* previos;
 };
+
+//Creating a head node
 struct node* head=NULL;
+
+//function for Insert in 1st of Linked List
 void insertHead(int value)
 {
     struct node* newnode;
@@ -30,6 +36,8 @@ void insertHead(int value)
     head->previos=newnode;
     head=newnode;
 }
+
+//Function for Insert in last of Linked List
 void insertLast(int val)
 {
     struct node* newnode;
@@ -45,6 +53,8 @@ void insertLast(int val)
     temp->next=newnode;
     head->previos=temp;
 }
+
+// Searching in node
 void search(int num)
 {
     struct node* temp=head;
@@ -65,6 +75,8 @@ void search(int num)
     }
     printf("%d not found\n",num);
 }
+
+// printing node
 void printAll()
 {
     struct node* temp=head;
@@ -77,6 +89,7 @@ void printAll()
 }
 int main()
 {
+    // Calling all functions
     insertHead(5);
     insertHead(3);
     insertHead(8);
