@@ -1,5 +1,5 @@
 #include<stdio.h>
-int binary_search(int *a[],int beg, int end, int x, int n)
+int binary_search(int a[],int beg, int end, int x, int n)
 {
     int mid;
     while(beg<=end)
@@ -13,13 +13,12 @@ int binary_search(int *a[],int beg, int end, int x, int n)
         {
             beg=mid+1;
         }
-        else if(a[mid]>x)
+        else
         {
             end=mid-1;
         }
-        else
-        return -1;
     }
+    return -1;
 }
 int main()
 {
@@ -34,5 +33,8 @@ int main()
     int x;
     scanf("%d",&x);
     int result=binary_search(a,0,n-1,x,n);
-    (result==-1)?printf("Element is not present in array"):printf("Element is present at %d location",result+1);
+    if(result!=-1) 
+    printf("Element is present at %d location",result+1);
+    else 
+    printf("Element is not present in array");
 }
